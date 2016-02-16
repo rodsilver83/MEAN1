@@ -1,0 +1,21 @@
+{
+  "name": "MEAN",
+  "version": "0.0.1",
+  "description": "My First MEAN App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MonogoDB",
+    "Express",
+    "AngularJS",
+    "Node.js"
+  ],
+  "author": "Rodrigo Soria",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "grunt": "latest"
+  }
+}
