@@ -1,27 +1,12 @@
 /**
  * Created by Rodrigo on 2/16/16.
  */
-var connect = require('connect');
-var app = connect();
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var logger = function(req,res,next){
-  console.log(req.method,req.url);
-  next();
-};
+var express = require('./config/express');
 
-var helloWorld = function(req,res,next){
-  res.setHeader('Content-Type','text/plain');
-  res.end('Hello World');
-};
-
-var goodbyeWorld = function(req,res,next){
-  res.setHeader('Content-Type','text/plain');
-  res.end('Goodbye World');
-};
-
-app.use(logger);
-app.use('/hello',helloWorld);
-app.use('/goodbye',goodbyeWorld);
+var app = express();
 app.listen(3000);
+module.exports = app;
 
 console.log('Server running at http://localhost:3000/');
