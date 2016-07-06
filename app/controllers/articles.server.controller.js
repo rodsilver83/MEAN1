@@ -1,7 +1,7 @@
 /**
  * Created by Rodrigo on 7/6/16.
  */
-var mongoose = requiere('moongose'),
+var mongoose = require('mongoose'),
   Article = mongoose.model('Article');
 
 var getErrorMessage = function(err){
@@ -22,6 +22,7 @@ exports.create = function(req,res){
   
   article.save(function(err){
     if(err){
+      console.log('CREATE: ',err);
       return res.status(400).send({message: getErrorMessage(err)});
     } else{
       res.json(article);
