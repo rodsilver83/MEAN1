@@ -15,7 +15,7 @@ var config = require('./config'),
   flash = require('connect-flash'),
   passport = require('passport');
 
-module.exports = function() {
+module.exports = function(db) {
   var app = express();
   var server = http.createServer(app);
   var io = socketio.listen(server);
@@ -62,7 +62,7 @@ module.exports = function() {
 
   app.use(express.static('./public'));
 
-  require('./socket.io')(server,io,mongoStore);
+  require('./socketio')(server,io,mongoStore);
 
   return server;
 }
