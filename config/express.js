@@ -33,7 +33,7 @@ module.exports = function(db) {
   
   var mongoStore = new MongoStore({
     db: db.connection.db
-  })
+  });
 
   app.use(session({
     saveUninitialized: true,
@@ -65,4 +65,4 @@ module.exports = function(db) {
   require('./socketio')(server,io,mongoStore);
 
   return server;
-}
+};

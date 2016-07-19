@@ -10,7 +10,7 @@ module.exports = function(app){
       var user = req.body;
       User.find({'username': user.username},
         function(err,users) {
-          if (users.length == 0) {
+          if (users.length === 0) {
             res.end('ERR');
           } else {
             res.end('OK');

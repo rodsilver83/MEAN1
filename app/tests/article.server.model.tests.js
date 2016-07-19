@@ -54,4 +54,4 @@ describe('Article Model Unit Tests:', function(){
       });
     });
   });
-})
+});
